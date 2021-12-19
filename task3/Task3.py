@@ -1,9 +1,9 @@
 import json
 
-with open('../tests.json', 'r') as file:
+with open('tests.json', 'r') as file:
     data = json.load(file)
 
-with open('../values.json', 'r') as file_2:
+with open('values.json', 'r') as file_2:
     todos = json.load(file_2)
 
 for k, v in todos.items():
