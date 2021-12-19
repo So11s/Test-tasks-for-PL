@@ -1,9 +1,9 @@
 import json
 
-with open('tests.json', 'r') as file:
+with open('../tests.json', 'r') as file:
     data = json.load(file)
 
-with open('values.json', 'r') as file_2:
+with open('../values.json', 'r') as file_2:
     todos = json.load(file_2)
 
 for k, v in todos.items():
@@ -22,5 +22,5 @@ for k, v in todos.items():
                         if i.get('id') == elem.get('id'):
                             elem['value'] = i['value']
 
-with open('report.json', 'w', encoding='utf8') as rep:
+with open('../report.json', 'w', encoding='utf8') as rep:
     json.dump(data, rep, indent=4)
