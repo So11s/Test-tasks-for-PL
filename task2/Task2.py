@@ -1,12 +1,28 @@
-with open('C:/Users/lelik/Desktop/file1.txt','r',encoding='utf8') as file:
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("file1")
+parser.add_argument("file2")
+
+args = parser.parse_args()
+
+with open(args.file1,'r',encoding='utf8') as file:
     content = file.read()
 
-with open('C:/Users/lelik/Desktop/file2.txt', 'r', encoding='utf8') as file_2:
+with open(args.file2, 'r', encoding='utf8') as file_2:
     content_2 = file_2.read()
 
 import math
 
 content = content.split()
+
+for i0, elem0 in enumerate(content):
+
+    if ',' in elem0:
+
+        content[i0] = elem0.replace(',', '.')
+
 okr = list(map(float, content))
 
 content_2 = content_2.split()

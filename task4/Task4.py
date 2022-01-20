@@ -1,4 +1,12 @@
-with open('task4.txt', 'r', encoding='utf8') as file:
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("nums")
+
+args = parser.parse_args()
+
+with open(args.nums, 'r', encoding='utf8') as file:
     content = file.read()
 
 content = content.split()

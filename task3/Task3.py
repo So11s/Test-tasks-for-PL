@@ -1,9 +1,17 @@
 import json
+import argparse
 
-with open('C:/Users/lelik/Desktop/tests1.json', 'r', encoding='utf-8') as file:
+parser = argparse.ArgumentParser()
+
+parser.add_argument("tests")
+parser.add_argument("values")
+
+args = parser.parse_args()
+
+with open(args.tests, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
-with open('C:/Users/lelik/Desktop/values1.json', 'r', encoding='utf-8') as file_2:
+with open(args.values, 'r', encoding='utf-8') as file_2:
     todos = json.load(file_2)
 
 
@@ -20,7 +28,7 @@ def task3(sqr, sqr2):
                         if sqr['id'] == elem['id'] and sqr.get('value') == '':
                             sqr['value'] = elem['value']
 
-    with open('C:/Users/lelik/Desktop/report.json', 'w', encoding='utf-8') as rep:
+    with open('report.json', 'w', encoding='utf-8') as rep:
         json.dump(data, rep, indent=4)
 
 task3(data, todos)
